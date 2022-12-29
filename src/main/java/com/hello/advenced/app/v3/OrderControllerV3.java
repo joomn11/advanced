@@ -1,12 +1,14 @@
 package com.hello.advenced.app.v3;
 
 import com.hello.advenced.trace.TraceStatus;
-import com.hello.advenced.trace.hellotrace.HelloTraceV2;
 import com.hello.advenced.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * ThreadLocal 적용
+ */
 @RestController
 @RequiredArgsConstructor
 public class OrderControllerV3 {
@@ -20,7 +22,7 @@ public class OrderControllerV3 {
         TraceStatus status = null;
         try {
             status = trace.begin("OrderController.request()");
-            orderService.orderItem(status.getTraceId() ,itemId);
+            orderService.orderItem(itemId);
             trace.end(status);
         } catch (Exception e) {
             trace.exception(status, e);

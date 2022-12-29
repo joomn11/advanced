@@ -1,8 +1,6 @@
 package com.hello.advenced.app.v3;
 
-import com.hello.advenced.trace.TraceId;
 import com.hello.advenced.trace.TraceStatus;
-import com.hello.advenced.trace.hellotrace.HelloTraceV2;
 import com.hello.advenced.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -13,7 +11,7 @@ public class OrderRepositoryV3 {
 
     private final LogTrace trace;
 
-    public void save(TraceId traceId, String itemId) {
+    public void save(String itemId) {
 
         TraceStatus status = null;
         try {
