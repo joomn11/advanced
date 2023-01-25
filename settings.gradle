@@ -1,3 +1,3 @@
 rootProject.name = 'advenced'
-include 'advenced'
+include 'advanced'
 include 'proxy'
