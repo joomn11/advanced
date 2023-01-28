@@ -37,6 +37,10 @@ public class TemplateMethodTest {
         log.info("resultTime={}", resultTime);
     }
 
+    /**
+     * 템플릿 메서드 패턴 - 다형성 이용
+     * 단점 : 하위 클래스를 만들어야 한다.
+     */
     @Test
     void templateMethodV1() {
         AbstractTemplate template1 = new SubClassLogic1();
@@ -47,6 +51,10 @@ public class TemplateMethodTest {
         // 단점 : 모두 클래스로 만들어야 한다.
     }
 
+    /**
+     * 템플릿 메서드 패턴 - 다형성 이용
+     * V1의 단점 보완 : 익명 내부 클래서 활용 , 자바8에서 부터는 람다 이용 가능
+     */
     @Test
     void templateMethodV2() {
         AbstractTemplate template1 = new AbstractTemplate() {

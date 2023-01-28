@@ -5,6 +5,9 @@ import com.hello.advenced.trace.template.AbstractTemplate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * 템플릿 메서드 패턴 - 다형성 이용
+ */
 @Service
 @RequiredArgsConstructor
 public class OrderServiceV4 {
